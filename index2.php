@@ -50,15 +50,14 @@
             echo(session_id());
             echo('<br>');
             echo($_SESSION['info']);
-            $_SESSION['info']= 'pero';
+            session_start();
             if (!isset($_SESSION['count'])) {
                 $_SESSION['count'] = 0;
             } else {
                 $_SESSION['count']++;
             }
             echo($_SESSION['count']);
-
-
+            
             $sql = "SELECT id, registracija, ime FROM automobili";
             $result = $conn->query($sql);
 
